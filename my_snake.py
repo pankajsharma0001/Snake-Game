@@ -104,6 +104,7 @@ def over(scr, high_score):
 
 
 def intro():
+    background_music.play(loops=-1)
     game_over = False
     while not game_over:
         for events in pygame.event.get():
@@ -118,7 +119,8 @@ def intro():
 
 
 def start_game(snake_speed, point):
-    background_music.play()
+    background_music.stop()
+    background_music.play(loops=-1)
     eat_sound = pygame.mixer.Sound('resources/eating_sound.mp3')
     crash_sound = pygame.mixer.Sound('resources/crash_sound.mp3')
     x = dis_width/2
